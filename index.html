@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusForge — Study Space Matcher</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card" id="app-card">
+    <header>
+      <h1>FocusForge</h1>
+      <p id="app-subtitle">Find your optimal study environment</p>
+    </header>
+
+    <!-- STEP 1: User Info & Energy -->
+    <section id="step-1" class="step active">
+      <div class="input-group">
+        <label for="username">What is your name?</label>
+        <input type="text" id="username" placeholder="e.g., Alex" />
+      </div>
+
+      <div class="input-group">
+        <label for="energy-level">Current Energy Level:</label>
+        <select id="energy-level">
+          <option value="">-- Choose Energy Level --</option>
+          <option value="low">Low (Drained / Fatigued)</option>
+          <option value="medium">Medium (Steady / Calm)</option>
+          <option value="high">High (Caffeinated / Ambitious)</option>
+        </select>
+      </div>
+
+      <button id="next-btn" class="btn">Next Step &rarr;</button>
+      <p id="error-msg" class="error hidden">Please enter your name and choose an energy level.</p>
+    </section>
+
+    <!-- STEP 2: Task Type & Lighting Preference -->
+    <section id="step-2" class="step hidden">
+      <div class="input-group">
+        <label for="task-type">What are you working on?</label>
+        <select id="task-type">
+          <option value="">-- Choose Task --</option>
+          <option value="reading">Light Reading / Memorization</option>
+          <option value="coding">Coding / Problem Solving</option>
+          <option value="creative">Creative Writing / Design</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="environment-pref">Preferred Setting:</label>
+        <select id="environment-pref">
+          <option value="">-- Choose Vibe --</option>
+          <option value="cafe">Bustling Coffee Shop</option>
+          <option value="library">Silent Library Sanctuary</option>
+          <option value="night">Late Night Cyberpunk Room</option>
+        </select>
+      </div>
+
+      <div class="button-row">
+        <button id="back-btn" class="btn btn-secondary">&larr; Back</button>
+        <button id="generate-btn" class="btn">Generate Study Space</button>
+      </div>
+      <p id="error-msg-step2" class="error hidden">Please make selections for both fields.</p>
+    </section>
+
+    <!-- STEP 3: Outcome / Results State -->
+    <section id="step-3" class="step hidden">
+      <div class="badge" id="outcome-badge">Outcome</div>
+      <h2 id="outcome-title">Your Custom Mode</h2>
+      <p id="outcome-desc">Personalized description goes here.</p>
+
+      <div class="details-box">
+        <p><strong>Recommended Timer:</strong> <span id="timer-rec">25 min</span></p>
+        <p><strong>Audio Vibe:</strong> <span id="audio-rec">Lo-fi Chill</span></p>
+        <p><strong>Suggested Beverage:</strong> <span id="drink-rec">Water</span></p>
+      </div>
+
+      <div class="stats-box">
+        <p>Sessions configured this visit: <span id="session-count">0</span></p>
+      </div>
+
+      <button id="reset-btn" class="btn btn-secondary">Generate Another Space</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
